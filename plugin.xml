@@ -188,7 +188,7 @@
     <framework src="ios/libs/third-party/opencv2.framework" custom="true" />
     <framework src="ios/libs/third-party/TesseractOCR.framework" custom="true" />
     
-    <framework src="ios/libs/MobbCommons.framework" embed="true" custom="true" />
+    <framework src="ios/libs/MobbCommons.framework" custom="true" embed="true" />
     <framework src="ios/libs/MobbScanSDK-iOS.framework" custom="true" />
     <framework src="ios/libs/MobbScan_MobbIDFaceValidator_iOS.framework" custom="true" />
     
@@ -199,9 +199,9 @@
 
     <!-- MobbID dependencies -->
     <!-- Add this if you want to use the face matching using the antispoofing from MobbID -->
-    <framework src="ios/libs/MobbIDSDK_Core.framework" embed="true" custom="true" />
-    <framework src="ios/libs/MobbIDSDK_Face.framework" embed="true" custom="true"/>
-    <framework src="ios/libs/protobuf_lite_ios.framework" embed="true" custom="true"/>
+    <framework src="ios/libs/MobbIDSDK_Core.framework" custom="true" embed="true"/>
+    <framework src="ios/libs/MobbIDSDK_Face.framework" custom="true" embed="true"/>
+    <framework src="ios/libs/protobuf_lite_ios.framework" custom="true" embed="true"/>
     <!-- End MobbID dependencies -->
 
     <resource-file src="ios/libs/MobbScanSDK-iOS.bundle" />
@@ -212,7 +212,6 @@
     <config-file target="*-Info.plist" parent="NSMicrophoneUsageDescription">
         <string>Used to confirm identity</string>
     </config-file>
-    <hook type="after_platform_add" src="hooks/ios/addEmbedded.js" />
   </platform>
 
 </plugin>
