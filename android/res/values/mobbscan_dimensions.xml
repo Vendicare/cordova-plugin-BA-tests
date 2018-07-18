@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="mobbscan_border_left">1dp</dimen>
+    <dimen name="mobbscan_border_right">1dp</dimen>
+    <dimen name="mobbscan_border_top">1dp</dimen>
+    <dimen name="mobbscan_border_bottom">1dp</dimen>
+    <dimen name="mobbscan_border_stroke_width">3dp</dimen>
+    <dimen name="mobbscan_border_stroke_dash_width">7dp</dimen>
+    <dimen name="mobbscan_border_stroke_dash_gap">6dp</dimen>
+    <dimen name="mobbscan_border_corner_stroke_width">5dp</dimen>
+    <dimen name="mobbscan_border_corner_stroke_width_adjustment">-5dp</dimen>
+</resources>

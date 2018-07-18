@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0" id="com.mobbeel.mobbscan" version="2.8.0">
+
+  <name>MobbScan</name>
+  <description>Cordova MobbScan Plugin</description>
+  <keywords>cordova,mobbscan</keywords>
+
+  <js-module src="www/mobbscanapi.js" name="MobbScanAPI">
+    <clobbers target="MobbScanAPI" />
+  </js-module>
+
+  <js-module src="www/mobbscanapimode.js" name="MobbScanAPIMode">
+    <clobbers target="MobbScanAPIMode" />
+  </js-module>
+
+  <js-module src="www/mobbscandocumenttype.js" name="MobbScanDocumentType">
+    <clobbers target="MobbScanDocumentType" />
+  </js-module>
+
+  <js-module src="www/mobbscanoperationmode.js" name="MobbScanOperationMode">
+    <clobbers target="MobbScanOperationMode" />
+  </js-module>
+
+  <js-module src="www/mobbscandocumentside.js" name="MobbScanDocumentSide">
+    <clobbers target="MobbScanDocumentSide" />
+  </js-module>
+
+  <js-module src="www/mobbscanscanresult.js" name="MobbScanScanResult">
+    <clobbers target="MobbScanScanResult" />
+  </js-module>
+
+  <js-module src="www/mobbscandetectionresult.js" name="MobbScanDetectionResult">
+    <clobbers target="MobbScanDetectionResult" />
+  </js-module>
+
+  <js-module src="www/mobbscanvideoapi.js" name="MobbScanVideoAPI">
+    <clobbers target="MobbScanVideoAPI" />
+  </js-module>
+
+  <js-module src="www/mobbscanvideoresult.js" name="MobbScanVideoResult">
+    <clobbers target="MobbScanVideoResult" />
+  </js-module>
+
+  <js-module src="www/mobbscanverificationprocessresult.js" name="MobbScanVerificationProcessResult">
+    <clobbers target="MobbScanVerificationProcessResult" />
+  </js-module>
+
+  <js-module src="www/mobbscanapifacevalidationmode.js" name="MobbScanFaceValidationMode">
+    <clobbers target="MobbScanFaceValidationMode" />
+  </js-module>
+
+  <js-module src="www/mobbscanvalidationstate.js" name="MobbScanValidationState">
+    <clobbers target="MobbScanValidationState" />
+  </js-module>
+
+  <platform name="android">
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="MobbScan">
+        <param name="android-package" value="com.mobbeel.mobbscan.MobbScan" />
+      </feature>
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/*">
+      <uses-permission android:name="android.permission.CAMERA" />
+      <uses-permission android:name="android.permission.RECORD_AUDIO" />
+      <uses-feature android:name="android.hardware.camera" />
+      <uses-feature android:name="android.hardware.camera.autofocus" android:required="true" />
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <activity android:name="com.mobbeel.mobbscan.MobbScanDocumentDetectionInterface" android:theme="@style/MobbScan.FullScreen" android:screenOrientation="landscape">
+          <intent-filter>
+              <action android:name="android.intent.action.DEFAULT" />
+          </intent-filter>
+      </activity>
+    </config-file>
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <activity android:name="com.mobbeel.mobbscan.MobbScanDetectOtherDocumentInterface" android:theme="@style/MobbScan.FullScreen" android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </config-file>
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <activity android:name="com.mobbeel.mobbscan.MobbScanVideoInterface" android:theme="@android:style/Theme.Holo.Light.NoActionBar" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize">
+          <intent-filter>
+              <action android:name="android.intent.action.DEFAULT" />
+          </intent-filter>
+      </activity>
+    </config-file>
+
+    <edit-config file="AndroidManifest.xml" target="/manifest/uses-sdk" mode="merge">
+      <uses-sdk android:minSdkVersion="19" android:targetSdkVersion="26" tools:overrideLibrary="com.mobbeel.mobbid.face.ux, com.mobbeel.mobbscan.mobbidfacevalidator" />
+    </edit-config>
+
+    <edit-config file="AndroidManifest.xml" target="/*" mode="merge">
+      <manifest xmlns:tools="http://schemas.android.com/tools" />
+    </edit-config>
+
+    <edit-config file="AndroidManifest.xml" target="/manifest/application" mode="merge">
+      <application android:name="android.support.multidex.MultiDexApplication"/>
+    </edit-config>
+
+    <framework src="android/MobbScan.gradle" custom="true" type="gradleReference" />
+
+    <source-file src="android/MobbScan.java" target-dir="src/com/mobbeel/mobbscan" />
+    <source-file src="android/MobbScanDocumentDetectionInterface.java" target-dir="src/com/mobbeel/mobbscan" />
+    <source-file src="android/MobbScanVideoInterface.java" target-dir="src/com/mobbeel/mobbscan" />
+    <source-file src="android/utils/DetectedImage.java" target-dir="src/com/mobbeel/mobbscan/utils" />
+    <source-file src="android/utils/MobbScanCallbackContext.java" target-dir="src/com/mobbeel/mobbscan/utils" />
+
+    <source-file src="android/res/values/mobbscan_strings.xml" target-dir="res/values" />
+    <source-file src="android/res/values-es/mobbscan_strings.xml" target-dir="res/values-es" />
+    <source-file src="android/res/values/mobbscan_styles.xml" target-dir="res/values" />
+    <source-file src="android/res/values/mobbscan_colors.xml" target-dir="res/values" />
+    <source-file src="android/res/values/mobbscan_dimensions.xml" target-dir="res/values" />
+    <source-file src="android/res/layout/mobbscan_video.xml" target-dir="res/layout" />
+    <source-file src="android/res/layout/mobbscan_document_detection.xml" target-dir="res/layout" />
+    <source-file src="android/res/drawable/mobbscan_document_detection_border.xml" target-dir="res/drawable" />
+    <source-file src="android/res/drawable/mobbscan_document_detection_top_start_corner.xml" target-dir="res/drawable" />
+    <source-file src="android/res/drawable/mobbscan_document_detection_top_end_corner.xml" target-dir="res/drawable" />
+    <source-file src="android/res/drawable/mobbscan_document_detection_bottom_start_corner.xml" target-dir="res/drawable" />
+    <source-file src="android/res/drawable/mobbscan_document_detection_bottom_end_corner.xml" target-dir="res/drawable" />
+
+    <resource-file src="android/libs/mobbscan-sdk-android-2.10.0.aar" target="libs" />
+    <resource-file src="android/libs/mobbscan-pdf417-zxing-extension-android-2.10.0.aar" target="libs" />
+    <resource-file src="android/libs/mobb-commons-android-1.4.4.aar" target="libs" />    
+
+    <!-- Add this if you want to use the face matching using the antispoofing from MobbID -->
+    <resource-file src="android/libs/mobbid-face-validator-android-2.10.0.aar" target="libs" />
+    <resource-file src="android/libs/mobbidsdk-core-android-5.0.0-RC18.aar" target="libs" />
+    <resource-file src="android/libs/mobbidsdk-face-android-5.0.0-RC18.aar" target="libs" />
+    <resource-file src="android/libs/mobbidsdk-face-ux-android-5.0.0-RC18.aar" target="libs" />
+
+    <hook type="after_plugin_install" src="hooks/android/afterPluginInstall.js" />
+  </platform>
+
+  <platform name="ios">
+
+    <config-file target="config.xml" parent="/widget">
+      <feature name="MobbScan">
+        <param name="ios-package" value="MobbScan" />
+      </feature>
+    </config-file>
+
+    <header-file src="ios/MobbScan.h" target-dir="MobbScan" />
+    <source-file src="ios/MobbScan.m" target-dir="MobbScan" />
+    <header-file src="ios/MobbScanInvokedUrlCommand.h" target-dir="MobbScan" />
+    <source-file src="ios/MobbScanInvokedUrlCommand.m" target-dir="MobbScan" />
+    <header-file src="ios/NSDate+MobbScan.h" target-dir="MobbScan" />
+    <source-file src="ios/NSDate+MobbScan.m" target-dir="MobbScan" />
+
+    <header-file src="ios/UIImage+MobbScan.h" target-dir="MobbScan" />
+    <source-file src="ios/UIImage+MobbScan.m" target-dir="MobbScan" />
+    <header-file src="ios/IDDocument+MobbScan.h" target-dir="MobbScan" />
+    <source-file src="ios/IDDocument+MobbScan.m" target-dir="MobbScan" />
+    <header-file src="ios/IDDocumentPDF417+MobbScan.h" target-dir="MobbScan" />
+    <source-file src="ios/IDDocumentPDF417+MobbScan.m" target-dir="MobbScan" />
+    <header-file src="ios/Distance+MobbScan.h" target-dir="MobbScan" />
+    <source-file src="ios/Distance+MobbScan.m" target-dir="MobbScan" />
+
+    <source-file src="ios/MobbScanOtherDocumentDetectionInterface.xib" target-dir="MobbScan" />
+    <source-file src="ios/MobbScanDocumentDetectionInterface.xib" target-dir="MobbScan" />
+    <header-file src="ios/MobbScanDocumentDetectionInterfaceProtocol.h" target-dir="MobbScan" />
+    <header-file src="ios/MobbScanDocumentDetectionInterface.h" target-dir="MobbScan" />
+    <source-file src="ios/MobbScanDocumentDetectionInterface.m" target-dir="MobbScan" />
+    <header-file src="ios/MobbScanOtherDocumentDetectionInterface.h" target-dir="MobbScan" />
+    <source-file src="ios/MobbScanOtherDocumentDetectionInterface.m" target-dir="MobbScan" />
+    <header-file src="ios/BorderView.h" target-dir="MobbScan" />
+    <source-file src="ios/BorderView.m" target-dir="MobbScan" />
+    <source-file src="ios/MobbScanVideoInterface.xib" target-dir="MobbScan" />
+    <header-file src="ios/MobbScanVideoInterfaceProtocol.h" target-dir="MobbScan" />
+    <header-file src="ios/MobbScanVideoInterface.h" target-dir="MobbScan" />
+    <source-file src="ios/MobbScanVideoInterface.m" target-dir="MobbScan" />
+
+    <framework src="Foundation.framework" />
+    <framework src="SystemConfiguration.framework" />
+    <framework src="MobileCoreServices.framework" />
+    <framework src="CoreMotion.framework" />
+    <framework src="AssetsLibrary.framework" />
+    <framework src="AudioToolbox.framework" />
+    <framework src="CoreMedia.framework" />
+    <framework src="AVFoundation.framework" />
+    <framework src="libiconv.tbd" />
+    <framework src="libstdc++.dylib" />
+
+    <framework src="ios/libs/third-party/opencv2.framework" custom="true" />
+    <framework src="ios/libs/third-party/TesseractOCR.framework" custom="true" />
+    
+    <framework src="ios/libs/MobbCommons.framework" embed="true" custom="true" />
+    <framework src="ios/libs/MobbScanSDK-iOS.framework" custom="true" />
+    <framework src="ios/libs/MobbScan_MobbIDFaceValidator_iOS.framework" custom="true" />
+    
+    <!-- Add this if you want to use the offline capabilities of the SDK.
+    <framework src="ios/libs/MobbScanOffline-iOS.framework" custom="true" />    
+    -->
+    <!-- Also add those bundle resources for the specific countries you want support for (in offline mode). Take a look at the plugin-offline.xml file  -->
+
+    <!-- MobbID dependencies -->
+    <!-- Add this if you want to use the face matching using the antispoofing from MobbID -->
+    <framework src="ios/libs/MobbIDSDK_Core.framework" embed="true" custom="true" />
+    <framework src="ios/libs/MobbIDSDK_Face.framework" embed="true" custom="true"/>
+    <framework src="ios/libs/protobuf_lite_ios.framework" embed="true" custom="true"/>
+    <!-- End MobbID dependencies -->
+
+    <resource-file src="ios/libs/MobbScanSDK-iOS.bundle" />
+
+    <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
+        <string>Used to scan documents</string>
+    </config-file>
+    <config-file target="*-Info.plist" parent="NSMicrophoneUsageDescription">
+        <string>Used to confirm identity</string>
+    </config-file>
+    <hook type="after_platform_add" src="hooks/ios/addEmbedded.js" />
+  </platform>
+
+</plugin>

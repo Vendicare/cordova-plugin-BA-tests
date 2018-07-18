@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="mobbscan_close">Cerrar</string>
+    <string name="mobbscan_searching_borders">Buscando los bordes del documento</string>
+    <string name="mobbscan_searching_borders_front">Buscando los bordes del documento (anverso)</string>
+    <string name="mobbscan_searching_borders_back">Buscando los bordes del documento (reverso)</string>
+    <string name="mobbscan_preparing_capture">Preparando la captura, no se mueva</string>
+</resources>

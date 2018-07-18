@@ -1,0 +1,17 @@
+{
+  "name": "MobbScan",
+  "version": "2.7.2",
+  "description": "Cordova MobbScan Plugin",
+  "cordova": {
+    "id": "com.mobbeel.mobbscan.MobbScan",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "keywords": [
+    "cordova",
+    "mobbscan"
+  ],
+  "author": "Mobbeel"
+}

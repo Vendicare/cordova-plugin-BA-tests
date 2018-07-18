@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="mobbscan_document_not_detected">#0E7BF6</color>
+    <color name="mobbscan_document_detected">#2AC316</color>
+    <color name="mobbscan_video_local_video_background">#aaaaaa</color>
+    <color name="mobbscan_video_remote_video_background">#555555</color>
+</resources>

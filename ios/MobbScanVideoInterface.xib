@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MobbScanVideoInterface">
+            <connections>
+                <outlet property="localVideoView" destination="2xo-OV-RpB" id="syd-9K-5Fv"/>
+                <outlet property="remoteVideView" destination="v15-Nh-4mn" id="dvJ-IB-Odz"/>
+                <outlet property="statusLabel" destination="nSa-pm-vZt" id="t3W-2c-Y2z"/>
+                <outlet property="toastLabel" destination="OUx-Xe-fJf" id="Dhq-MV-bSa"/>
+                <outlet property="view" destination="5ny-eB-OR7" id="IQt-L7-iWZ"/>
+                <outlet property="waitingSpinner" destination="4YJ-fU-bJw" id="JP7-yD-JOE"/>
+            </connections>
+        </placeholder>
+        <view contentMode="scaleToFill" id="5ny-eB-OR7">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="2xo-OV-RpB" userLabel="Local Video" customClass="MobbScanVideoView">
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RjJ-RL-iad" userLabel="Stop Button">
+                    <rect key="frame" x="327" y="36" width="32" height="30"/>
+                    <state key="normal" title="Stop"/>
+                    <connections>
+                        <action selector="stopTouched:" destination="-1" eventType="touchUpInside" id="HJt-HA-Aby"/>
+                    </connections>
+                </button>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="4YJ-fU-bJw" userLabel="Waiting spinner">
+                    <rect key="frame" x="16" y="36" width="20" height="20"/>
+                </activityIndicatorView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSa-pm-vZt" userLabel="Status Label">
+                    <rect key="frame" x="56" y="36" width="71.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="v15-Nh-4mn" userLabel="Remote Video" customClass="MobbScanVideoView">
+                    <rect key="frame" x="281.5" y="505.5" width="93.5" height="161.5"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toast" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OUx-Xe-fJf" userLabel="Toast">
+                    <rect key="frame" x="16" y="630" width="343" height="21"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="AQj-zi-3KO" firstAttribute="bottom" secondItem="OUx-Xe-fJf" secondAttribute="bottom" constant="16" id="1nk-C4-mpM"/>
+                <constraint firstItem="AQj-zi-3KO" firstAttribute="bottom" secondItem="v15-Nh-4mn" secondAttribute="bottom" id="3vB-GX-D1V"/>
+                <constraint firstItem="AQj-zi-3KO" firstAttribute="trailing" secondItem="OUx-Xe-fJf" secondAttribute="trailing" constant="16" id="64q-1P-lbI"/>
+                <constraint firstItem="AQj-zi-3KO" firstAttribute="trailing" secondItem="v15-Nh-4mn" secondAttribute="trailing" id="AOh-H2-w8h"/>
+                <constraint firstItem="4YJ-fU-bJw" firstAttribute="leading" secondItem="AQj-zi-3KO" secondAttribute="leading" constant="16" id="EOm-Md-DMx"/>
+                <constraint firstItem="2xo-OV-RpB" firstAttribute="top" secondItem="AQj-zi-3KO" secondAttribute="top" id="ImF-x5-gPn"/>
+                <constraint firstItem="AQj-zi-3KO" firstAttribute="trailing" secondItem="2xo-OV-RpB" secondAttribute="trailing" id="Pft-p5-TWK"/>
+                <constraint firstItem="nSa-pm-vZt" firstAttribute="leading" secondItem="4YJ-fU-bJw" secondAttribute="trailing" constant="20" id="T5V-zg-zJa"/>
+                <constraint firstItem="OUx-Xe-fJf" firstAttribute="leading" secondItem="AQj-zi-3KO" secondAttribute="leading" constant="16" id="Vx4-0R-f93"/>
+                <constraint firstItem="2xo-OV-RpB" firstAttribute="leading" secondItem="AQj-zi-3KO" secondAttribute="leading" id="XAr-IJ-BQH"/>
+                <constraint firstItem="AQj-zi-3KO" firstAttribute="bottom" secondItem="2xo-OV-RpB" secondAttribute="bottom" id="XWd-a5-qCa"/>
+                <constraint firstItem="nSa-pm-vZt" firstAttribute="top" secondItem="AQj-zi-3KO" secondAttribute="top" constant="16" id="YeC-lz-DnG"/>
+                <constraint firstItem="v15-Nh-4mn" firstAttribute="width" secondItem="2xo-OV-RpB" secondAttribute="width" multiplier="0.25" id="bDu-l5-8CE"/>
+                <constraint firstItem="4YJ-fU-bJw" firstAttribute="top" secondItem="AQj-zi-3KO" secondAttribute="top" constant="16" id="cbH-db-Kbz"/>
+                <constraint firstItem="AQj-zi-3KO" firstAttribute="trailing" secondItem="RjJ-RL-iad" secondAttribute="trailing" constant="16" id="nkr-rP-D5P"/>
+                <constraint firstItem="RjJ-RL-iad" firstAttribute="top" secondItem="AQj-zi-3KO" secondAttribute="top" constant="16" id="oTu-Ep-yFL"/>
+                <constraint firstItem="v15-Nh-4mn" firstAttribute="height" secondItem="2xo-OV-RpB" secondAttribute="height" multiplier="0.25" id="tUm-FR-ZQk"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="AQj-zi-3KO"/>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
+        </view>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+    </objects>
+</document>

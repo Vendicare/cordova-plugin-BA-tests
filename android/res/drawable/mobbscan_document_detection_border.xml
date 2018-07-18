@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/border"
+        android:left="@dimen/mobbscan_border_left"
+        android:right="@dimen/mobbscan_border_right"
+        android:top="@dimen/mobbscan_border_top"
+        android:bottom="@dimen/mobbscan_border_bottom">
+        <shape
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:shape="rectangle">
+            <stroke
+                android:width="@dimen/mobbscan_border_stroke_width"
+                android:color="@color/mobbscan_document_not_detected"
+                android:dashWidth="@dimen/mobbscan_border_stroke_dash_width"
+                android:dashGap="@dimen/mobbscan_border_stroke_dash_gap" />
+        </shape>
+    </item>
+</layer-list>
