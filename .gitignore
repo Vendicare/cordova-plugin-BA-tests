@@ -1,4 +1,3 @@
 
-!ios/libs/.gitkeep
 android/libs/*
 !android/libs/.gitkeep
