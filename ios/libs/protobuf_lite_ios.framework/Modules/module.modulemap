@@ -1,0 +1,6 @@
+framework module protobuf_lite_ios {
+  umbrella header "protobuf_lite_ios.h"
+
+  export *
+  module * { export * }
+}

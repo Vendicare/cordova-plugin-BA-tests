@@ -1,0 +1,6 @@
+framework module MobbIDSDK_Face {
+  umbrella header "MobbIDSDK_Face.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module MobbScan_MobbIDFaceValidator_iOS {
+  umbrella header "MobbScan_MobbIDFaceValidator_iOS.h"
+
+  export *
+  module * { export * }
+}

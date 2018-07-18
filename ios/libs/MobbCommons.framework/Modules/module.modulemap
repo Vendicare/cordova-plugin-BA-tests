@@ -1,0 +1,6 @@
+framework module MobbCommons {
+  umbrella header "MobbCommons.h"
+
+  export *
+  module * { export * }
+}
