@@ -1,0 +1,5 @@
+ios/libs/MobbScanOffline-iOS.framework/MobbScanOffline-iOS filter=lfs diff=lfs merge=lfs -text
+ios/libs/third-party/opencv2.framework/Versions/A/opencv2 filter=lfs diff=lfs merge=lfs -text
+ios/libs/third-party/TesseractOCR.framework/TesseractOCR filter=lfs diff=lfs merge=lfs -text
+ios/libs/third-party/TwilioVideo.framework/TwilioVideo filter=lfs diff=lfs merge=lfs -text
+ios/libs/MobbScanSDK-iOS.framework/MobbScanSDK-iOS filter=lfs diff=lfs merge=lfs -text
