@@ -174,16 +174,7 @@
     <header-file src="ios/MobbScanVideoInterface.h" target-dir="MobbScan" />
     <source-file src="ios/MobbScanVideoInterface.m" target-dir="MobbScan" />
 
-    <framework src="Foundation.framework" />
-    <framework src="SystemConfiguration.framework" />
-    <framework src="MobileCoreServices.framework" />
-    <framework src="CoreMotion.framework" />
-    <framework src="AssetsLibrary.framework" />
-    <framework src="AudioToolbox.framework" />
-    <framework src="CoreMedia.framework" />
-    <framework src="AVFoundation.framework" />
-    <framework src="libiconv.tbd" />
-    <framework src="libstdc++.dylib" />
+
 
     <framework src="ios/libs/third-party/opencv2.framework" custom="true" embed="true"/>
     <framework src="ios/libs/third-party/TesseractOCR.framework" custom="true" embed="true"/>
