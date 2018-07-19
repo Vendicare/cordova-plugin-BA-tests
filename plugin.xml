@@ -160,7 +160,19 @@
     <header-file src="ios/Distance+MobbScan.h" target-dir="MobbScan" />
     <source-file src="ios/Distance+MobbScan.m" target-dir="MobbScan" />
 
-
+    <source-file src="ios/MobbScanOtherDocumentDetectionInterface.xib" target-dir="MobbScan" />
+    <source-file src="ios/MobbScanDocumentDetectionInterface.xib" target-dir="MobbScan" />
+    <header-file src="ios/MobbScanDocumentDetectionInterfaceProtocol.h" target-dir="MobbScan" />
+    <header-file src="ios/MobbScanDocumentDetectionInterface.h" target-dir="MobbScan" />
+    <source-file src="ios/MobbScanDocumentDetectionInterface.m" target-dir="MobbScan" />
+    <header-file src="ios/MobbScanOtherDocumentDetectionInterface.h" target-dir="MobbScan" />
+    <source-file src="ios/MobbScanOtherDocumentDetectionInterface.m" target-dir="MobbScan" />
+    <header-file src="ios/BorderView.h" target-dir="MobbScan" />
+    <source-file src="ios/BorderView.m" target-dir="MobbScan" />
+    <source-file src="ios/MobbScanVideoInterface.xib" target-dir="MobbScan" />
+    <header-file src="ios/MobbScanVideoInterfaceProtocol.h" target-dir="MobbScan" />
+    <header-file src="ios/MobbScanVideoInterface.h" target-dir="MobbScan" />
+    <source-file src="ios/MobbScanVideoInterface.m" target-dir="MobbScan" />
 
     <framework src="Foundation.framework" />
     <framework src="SystemConfiguration.framework" />
