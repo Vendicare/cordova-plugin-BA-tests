@@ -174,6 +174,21 @@
     <header-file src="ios/MobbScanVideoInterface.h" target-dir="MobbScan" />
     <source-file src="ios/MobbScanVideoInterface.m" target-dir="MobbScan" />
 
+    
+    <framework src="ios/libs/MobbScanSDK-iOS.framework" custom="true" embed="true"/>
+    <framework src="ios/libs/MobbScan_MobbIDFaceValidator_iOS.framework" custom="true" embed="true"/>
+    
+    <!-- Add this if you want to use the offline capabilities of the SDK.
+    <framework src="ios/libs/MobbScanOffline-iOS.framework" custom="true" />    
+    -->
+    <!-- Also add those bundle resources for the specific countries you want support for (in offline mode). Take a look at the plugin-offline.xml file  -->
+
+    <!-- MobbID dependencies -->
+    <!-- Add this if you want to use the face matching using the antispoofing from MobbID -->
+    <framework src="ios/libs/MobbIDSDK_Core.framework" custom="true" embed="true"/>
+    <framework src="ios/libs/MobbIDSDK_Face.framework" custom="true" embed="true"/>
+    <framework src="ios/libs/protobuf_lite_ios.framework" custom="true" embed="true"/>
+
     <framework src="Foundation.framework" />
     <framework src="SystemConfiguration.framework" />
     <framework src="MobileCoreServices.framework" />
@@ -189,19 +204,6 @@
     <framework src="ios/libs/third-party/TesseractOCR.framework" custom="true" embed="true"/>
     
     <framework src="ios/libs/MobbCommons.framework" custom="true" />
-    <framework src="ios/libs/MobbScanSDK-iOS.framework" custom="true" embed="true"/>
-    <framework src="ios/libs/MobbScan_MobbIDFaceValidator_iOS.framework" custom="true" embed="true"/>
-    
-    <!-- Add this if you want to use the offline capabilities of the SDK.
-    <framework src="ios/libs/MobbScanOffline-iOS.framework" custom="true" />    
-    -->
-    <!-- Also add those bundle resources for the specific countries you want support for (in offline mode). Take a look at the plugin-offline.xml file  -->
-
-    <!-- MobbID dependencies -->
-    <!-- Add this if you want to use the face matching using the antispoofing from MobbID -->
-    <framework src="ios/libs/MobbIDSDK_Core.framework" custom="true" embed="true"/>
-    <framework src="ios/libs/MobbIDSDK_Face.framework" custom="true" embed="true"/>
-    <framework src="ios/libs/protobuf_lite_ios.framework" custom="true" embed="true"/>
     <!-- End MobbID dependencies -->
 
     <resource-file src="ios/libs/MobbScanSDK-iOS.bundle" />
