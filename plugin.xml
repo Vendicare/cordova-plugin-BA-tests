@@ -185,7 +185,7 @@
     <framework src="libiconv.tbd" />
     <framework src="libstdc++.dylib" />
     
-    <framework src="ios/libs/MobbCommons.framework" custom="true" embed="true" />
+    <framework src="ios/libs/MobbCommons.framework" custom="true" />
     <framework src="ios/libs/MobbScanSDK-iOS.framework" custom="true"/>
     <framework src="ios/libs/MobbScan_MobbIDFaceValidator_iOS.framework" custom="true" embed="true"/>
     
